@@ -17,7 +17,7 @@ export default class CreateOrphanageService {
     ) {}
 
     public async execute(data: IRequest): Promise<Orphanage> {
-        const orphanage = this.orphanagesRepository.create(data);
+        const orphanage = await this.orphanagesRepository.create(data);
 
         return orphanage;
     }

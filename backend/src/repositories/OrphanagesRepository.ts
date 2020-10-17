@@ -18,6 +18,12 @@ export default class OrphanagesRepository {
         return orphanage;
     }
 
+    public async find(page: number): Promise<Orphanage[]> {
+        const orphanages = this.ormRepository.find({ take: 5, skip: 5 * page })
+
+        return orphanages;
+    }
+
     public async findById(id: string): Promise<Orphanage | undefined> {
         const orphanage = this.ormRepository.findOne(id);
 
