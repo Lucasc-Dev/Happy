@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { Link } from 'react-router-dom';
+
 import backgroundImg from '../../assets/images/landing.svg';
 
 export const Container = styled.div`
@@ -67,7 +69,7 @@ export const Location = styled.div`
     }
 `;
 
-export const Link = styled.a`
+export const LinkButton = styled(Link)`
     position: absolute;
     right: 0;
     bottom: 0;
@@ -80,7 +82,6 @@ export const Link = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
 
     transition: background-color 0.2s;
 
