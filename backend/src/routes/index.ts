@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
+import orphanagesRouter from './orphanages.routes';
+
 const router = Router();
 
-router.get('/', (request, response) => {
-    return response.json({ message: 'Hello World!' });
-});
+router.use('/orphanages', orphanagesRouter);
 
 export default router;
