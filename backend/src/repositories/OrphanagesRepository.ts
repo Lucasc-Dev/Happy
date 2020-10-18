@@ -25,7 +25,7 @@ export default class OrphanagesRepository {
     }
 
     public async findById(id: string): Promise<Orphanage | undefined> {
-        const orphanage = this.ormRepository.findOne({ where: id });
+        const orphanage = this.ormRepository.findOne(id);
 
         return orphanage;
     }

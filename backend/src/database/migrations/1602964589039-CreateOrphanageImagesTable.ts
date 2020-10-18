@@ -19,7 +19,7 @@ export class CreateOrphanageImagesTable1602964589039 implements MigrationInterfa
                         type: 'varchar',
                     },
                     {
-                        name: 'orphanage_id',
+                        name: 'orphanageId',
                         type: 'uuid',
                     },
                     {
@@ -36,7 +36,7 @@ export class CreateOrphanageImagesTable1602964589039 implements MigrationInterfa
                 foreignKeys: [
                     {
                         name: 'OrphanageImage',
-                        columnNames: ['orphanage_id'],
+                        columnNames: ['orphanageId'],
                         referencedTableName: 'orphanages',
                         referencedColumnNames: ['id'],
                         onUpdate: 'CASCADE',
@@ -48,7 +48,7 @@ export class CreateOrphanageImagesTable1602964589039 implements MigrationInterfa
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropForeignKey('orphanage_images', 'OrphanageImages');
+        await queryRunner.dropForeignKey('orphanage_images', 'OrphanageImage');
 
         await queryRunner.dropTable('orphanage_images');
     }
