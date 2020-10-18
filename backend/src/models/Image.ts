@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import Orphanage from './Orphanage';
 
-@Entity('orphanageImages')
+@Entity('orphanage_images')
 export default class Image{
     @PrimaryGeneratedColumn('uuid')
     id: string;

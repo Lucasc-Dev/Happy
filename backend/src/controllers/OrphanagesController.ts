@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import orphanageView from '../views/orphanages_view';
 
 import OrphanagesRepository from "../repositories/OrphanagesRepository";
 
@@ -16,7 +17,7 @@ export default class OrphanagesController {
 
         const orphanage = await showOrphanage.execute(id);
 
-        return response.json(orphanage);
+        return response.json(orphanageView.render(orphanage));
     }
 
     public async index(request: Request, response: Response): Promise<Response> {
@@ -28,7 +29,7 @@ export default class OrphanagesController {
 
         const orphanages = await listOrphanages.execute(Number(page));
 
-        return response.json(orphanages);
+        return response.json(orphanageView.renderMany(orphanages));
     }
 
     public async create(request: Request, response: Response): Promise<Response> {
@@ -60,6 +61,6 @@ export default class OrphanagesController {
             images,
         });
 
-        return response.json(orphanage);
+        return response.json(orphanageView.render(orphanage));
     }
 }
