@@ -42,6 +42,9 @@ export default class OrphanagesController {
             open_on_weekends,
         } = request.body;
 
+        const requestImages = request.files as Express.Multer.File[];
+        const images = requestImages.map(image => image.filename)
+
         const orphanagesRepository = new OrphanagesRepository();
 
         const createOrphanage = new CreateOrphanageService(orphanagesRepository);
@@ -54,6 +57,7 @@ export default class OrphanagesController {
             instructions,
             opening_hours,
             open_on_weekends,
+            images,
         });
 
         return response.json(orphanage);
