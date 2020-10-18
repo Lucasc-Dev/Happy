@@ -19,7 +19,7 @@ export default class OrphanagesRepository {
     }
 
     public async find(page: number): Promise<Orphanage[]> {
-        const orphanages = this.ormRepository.find({ take: 5, skip: 5 * page })
+        const orphanages = this.ormRepository.find({ take: 20, skip: 20 * page })
 
         return orphanages;
     }
