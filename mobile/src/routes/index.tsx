@@ -21,6 +21,7 @@ export default function Routes() {
                 }}
             >
                 <Screen name="OrphanagesMap" component={OrphanagesMap} />
+                
                 <Screen 
                     name="OrphanageDetails" 
                     component={OrphanageDetails} 
